@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Movie catalog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic movie catalog app to learn usage of React Context
 
 ## Available Scripts
 
