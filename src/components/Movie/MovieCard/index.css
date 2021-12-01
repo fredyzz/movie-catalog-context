@@ -1,0 +1,63 @@
+.MovieCard {
+  margin-top: 42px;
+  width: 240px;
+  height: 360px;
+  perspective: 500px;
+}
+
+.MovieCard-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.MovieCard:hover .MovieCard-content {
+  transform: rotateY(180deg);
+  transition: transform 0.5s;
+}
+
+.MovieCard-content--front,
+.MovieCard-content--back {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  color: #03446a;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 5px;
+  backface-visibility: hidden;
+}
+
+.MovieCard-content--back {
+  transform: rotateY(180deg);
+}
+
+.MovieCard-image {
+  max-width: 240px;
+}
+
+.MovieCard-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  margin: 12px;
+}
+
+.MovieCard-description {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  margin: 12px;
+}
