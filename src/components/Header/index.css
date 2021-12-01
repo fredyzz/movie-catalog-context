@@ -1,0 +1,21 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.Header-titles h1,
+.Header-titles h2 {
+  text-align: center;
+}
+
+.Header-titles h1 {
+  margin-bottom: 16px;
+}
+
+.Header-titles h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
