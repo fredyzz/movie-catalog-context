@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import "./index.css";
 import ThemeToogle from "./ThemeToogle";
+import "./index.css";
 
-const Header = ({ isDarkMode, title, toogleDarkMode, subTitle }) => {
-  const baseClass = "Header";
+const baseClass = "Header";
 
+const Header = ({ isDarkMode, subTitle, title, toogleDarkMode }) => {
   return (
     <div className={baseClass}>
       <div className={`${baseClass}-titles`}>
@@ -25,9 +25,9 @@ const Header = ({ isDarkMode, title, toogleDarkMode, subTitle }) => {
 
 Header.propTypes = {
   isDarkMode: PropTypes.bool,
+  subTitle: PropTypes.string,
   title: PropTypes.string.isRequired,
-  toogleDarkMode: PropTypes.func.isRequired,
-  subTitle: PropTypes.string
+  toogleDarkMode: PropTypes.func.isRequired
 };
 
 Header.defaultProps = {
