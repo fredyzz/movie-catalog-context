@@ -10,6 +10,8 @@ import movieListMock from "./__mocks__/movies";
 
 const movieList = movieListMock.result;
 
+const { REACT_APP_TITLE } = process.env;
+
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const toogleDarkMode = () => setIsDarkMode(!isDarkMode);
@@ -18,8 +20,8 @@ const App = () => {
 
   const getLayout = () => (
     <Layout
-      title="Movie Catalog"
       isDarkMode={isDarkMode}
+      title={REACT_APP_TITLE}
       toogleDarkMode={toogleDarkMode}
     />
   );
@@ -35,7 +37,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={getLayout()}>
           <Route index element={getMovieList()} />
-          <Route path="detail" element={getMovieDetail()} />
+          <Route path="movie/:movieId" element={getMovieDetail()} />
         </Route>
       </Routes>
     </div>
