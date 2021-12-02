@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import { MOVIE_IMAGE_BASE_URL } from "../../../config";
 import MovieCardFront from "./MovieCardFront";
 import MovieCardBack from "./MovieCardBack";
+import { MOVIE_IMAGE_BASE_URL } from "../../../config";
 import "./index.css";
 
-const MovieCard = ({ movie, isDarkMode }) => {
-  const baseClass = "MovieCard";
+const baseClass = "MovieCard";
 
+const MovieCard = ({ movie, isDarkMode }) => {
   const theme = isDarkMode ? "dark" : "light";
 
   const { overview, poster_path: posterPath, title } = movie;
@@ -16,7 +16,7 @@ const MovieCard = ({ movie, isDarkMode }) => {
 
   return (
     <div className={`${baseClass} `}>
-      <Link to="detail">
+      <Link to={`movie/${movie.id}`}>
         <div className={`${baseClass}-content`}>
           <MovieCardFront
             baseClass={baseClass}
@@ -38,6 +38,7 @@ const MovieCard = ({ movie, isDarkMode }) => {
 MovieCard.propTypes = {
   isDarkMode: PropTypes.bool,
   movie: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     overview: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
