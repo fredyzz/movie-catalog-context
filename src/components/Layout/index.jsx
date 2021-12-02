@@ -8,9 +8,9 @@ const Layout = ({ isDarkMode, subtitle, title, toogleDarkMode }) => {
   return (
     <div className="Layout">
       <Header
-        title={title}
-        subtitle={subtitle}
         isDarkMode={isDarkMode}
+        subtitle={subtitle}
+        title={title}
         toogleDarkMode={toogleDarkMode}
       />
       <Outlet />

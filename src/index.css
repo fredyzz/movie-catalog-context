@@ -1,6 +1,6 @@
 body {
-  margin: 0;
-  font-family: "Outfit", sans-serif;
-  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
 }

@@ -1,7 +1,7 @@
 .ThemeToogle {
-  width: 300px;
   display: flex;
   justify-content: center;
+  width: 300px;
 }
 
 .ThemeToogle-checkbox {
@@ -10,27 +10,27 @@
 }
 
 .ThemeToogle-label {
-  position: relative;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: black;
   border-radius: 50px;
   height: 26px;
-  width: 50px;
   padding: 5px;
+  position: relative;
   transform: scale(1.5);
+  width: 50px;
 }
 
 .ThemeToogle-ball {
-  position: absolute;
   background-color: #fff;
   border-radius: 50%;
   height: 22px;
-  width: 22px;
-  top: 2px;
   left: 2px;
+  position: absolute;
+  top: 2px;
   transition: transform 0.2s linear;
+  width: 22px;
 }
 
 .ThemeToogle-checkbox:checked + .ThemeToogle-label .ThemeToogle-ball {
