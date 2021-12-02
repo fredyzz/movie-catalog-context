@@ -5,6 +5,9 @@ import "./index.css";
 const baseClass = "MovieDetail";
 
 const MovieDetail = () => {
+  // eslint-disable-next-line no-console
+  console.log("render MovieDetail");
+
   const { movieId } = useParams();
 
   return (

@@ -8,8 +8,9 @@ import "./index.css";
 
 const baseClass = "MovieCard";
 
-const MovieCard = ({ movie, isDarkMode }) => {
-  const theme = isDarkMode ? "dark" : "light";
+const MovieCard = ({ movie }) => {
+  // eslint-disable-next-line no-console
+  console.log("render MovieCard");
 
   const { overview, poster_path: posterPath, title } = movie;
   const moviePoster = `${MOVIE_IMAGE_BASE_URL}${posterPath}`;
@@ -26,7 +27,6 @@ const MovieCard = ({ movie, isDarkMode }) => {
           <MovieCardBack
             baseClass={baseClass}
             overview={overview}
-            theme={theme}
             title={title}
           />
         </div>
@@ -36,17 +36,12 @@ const MovieCard = ({ movie, isDarkMode }) => {
 };
 
 MovieCard.propTypes = {
-  isDarkMode: PropTypes.bool,
   movie: PropTypes.shape({
     id: PropTypes.number.isRequired,
     overview: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   }).isRequired
-};
-
-MovieCard.defaultProps = {
-  isDarkMode: false
 };
 
 export default MovieCard;

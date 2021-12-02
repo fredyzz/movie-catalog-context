@@ -1,18 +1,21 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
-import PropTypes from "prop-types";
+import React, { useContext } from "react";
+import GlobalContext from "../../../GlobalContext";
 import "./index.css";
 
 const baseClass = "ThemeToogle";
 
-const ThemeToogle = ({ isDarkMode, onToogle }) => {
+const ThemeToogle = () => {
+  // eslint-disable-next-line no-console
+  console.log("render ThemeToogle");
+  const { isDarkMode, toogleDarkMode } = useContext(GlobalContext);
   return (
     <div className={baseClass}>
       <input
         id="checkbox"
         type="checkbox"
         className={`${baseClass}-checkbox`}
-        onChange={onToogle}
+        onChange={toogleDarkMode}
         checked={isDarkMode}
       />
       <label htmlFor="checkbox" className={`${baseClass}-label`}>
@@ -22,15 +25,6 @@ const ThemeToogle = ({ isDarkMode, onToogle }) => {
       </label>
     </div>
   );
-};
-
-ThemeToogle.propTypes = {
-  isDarkMode: PropTypes.bool,
-  onToogle: PropTypes.func.isRequired
-};
-
-ThemeToogle.defaultProps = {
-  isDarkMode: false
 };
 
 export default ThemeToogle;
