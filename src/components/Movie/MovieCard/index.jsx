@@ -38,7 +38,7 @@ const MovieCard = ({ movie, isDarkMode }) => {
 MovieCard.propTypes = {
   isDarkMode: PropTypes.bool,
   movie: PropTypes.shape({
-    id: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
     overview: PropTypes.string.isRequired,
     poster_path: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
