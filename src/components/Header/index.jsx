@@ -6,7 +6,10 @@ import "./index.css";
 
 const baseClass = "Header";
 
-const Header = ({ isDarkMode, subTitle, title, toogleDarkMode }) => {
+const Header = ({ subTitle, title }) => {
+  // eslint-disable-next-line no-console
+  console.log("render Header");
+
   return (
     <div className={baseClass}>
       <div className={`${baseClass}-titles`}>
@@ -17,21 +20,18 @@ const Header = ({ isDarkMode, subTitle, title, toogleDarkMode }) => {
         {subTitle && <h2>{subTitle}</h2>}
       </div>
       <div className={`${baseClass}-actions`}>
-        <ThemeToogle onToogle={toogleDarkMode} isDarkMode={isDarkMode} />
+        <ThemeToogle />
       </div>
     </div>
   );
 };
 
 Header.propTypes = {
-  isDarkMode: PropTypes.bool,
   subTitle: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  toogleDarkMode: PropTypes.func.isRequired
+  title: PropTypes.string.isRequired
 };
 
 Header.defaultProps = {
-  isDarkMode: false,
   subTitle: null
 };
 
