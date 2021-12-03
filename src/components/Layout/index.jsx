@@ -3,30 +3,28 @@ import PropTypes from "prop-types";
 import { Outlet } from "react-router-dom";
 import Header from "../Header";
 import "./index.css";
+import useTheme from "../../Context/Theme/useTheme";
 
-const Layout = ({ isDarkMode, subtitle, title, toogleDarkMode }) => {
+const Layout = ({ subtitle, title }) => {
+  // eslint-disable-next-line no-console
+  console.log("render Layout");
+
+  const { theme } = useTheme();
+
   return (
-    <div className="Layout">
-      <Header
-        isDarkMode={isDarkMode}
-        subtitle={subtitle}
-        title={title}
-        toogleDarkMode={toogleDarkMode}
-      />
+    <div className={`Layout ${theme}`}>
+      <Header subtitle={subtitle} title={title} />
       <Outlet />
     </div>
   );
 };
 
 Layout.propTypes = {
-  isDarkMode: PropTypes.bool,
   subtitle: PropTypes.string,
-  title: PropTypes.string.isRequired,
-  toogleDarkMode: PropTypes.func.isRequired
+  title: PropTypes.string.isRequired
 };
 
 Layout.defaultProps = {
-  isDarkMode: false,
   subtitle: undefined
 };
 
