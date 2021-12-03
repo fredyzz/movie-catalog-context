@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import ThemeToogle from "./ThemeToogle";
@@ -35,4 +35,4 @@ Header.defaultProps = {
   subTitle: null
 };
 
-export default Header;
+export default memo(Header);

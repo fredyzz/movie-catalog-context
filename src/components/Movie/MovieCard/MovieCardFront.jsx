@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 
 const MovieCardFront = ({ baseClass, moviePoster, title }) => {
@@ -15,4 +15,4 @@ MovieCardFront.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-export default MovieCardFront;
+export default memo(MovieCardFront);

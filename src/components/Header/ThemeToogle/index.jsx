@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import React, { memo } from "react";
 import useTheme from "../../../Context/Theme/useTheme";
 import "./index.css";
 
@@ -29,4 +29,4 @@ const ThemeToogle = () => {
   );
 };
 
-export default ThemeToogle;
+export default memo(ThemeToogle);

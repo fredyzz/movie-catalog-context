@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import PropTypes from "prop-types";
 import useTheme from "../../../Context/Theme/useTheme";
 
@@ -22,4 +22,4 @@ MovieCardBack.propTypes = {
   title: PropTypes.string.isRequired
 };
 
-export default MovieCardBack;
+export default memo(MovieCardBack);

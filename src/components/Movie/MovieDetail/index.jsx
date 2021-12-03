@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { useParams } from "react-router-dom";
 import "./index.css";
 
@@ -15,4 +15,4 @@ const MovieDetail = () => {
   );
 };
 
-export default MovieDetail;
+export default memo(MovieDetail);
